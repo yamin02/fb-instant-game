@@ -1,3 +1,5 @@
+## In the facebook game page , upload the zip of src only
+
 # FB  Instant Game Template
 
 [![N|Solid](https://www.databoxtech.com/wp-content/uploads/2020/07/ezgif.com-crop-1.jpg)](https://databoxtech.com)

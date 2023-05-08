@@ -24,7 +24,7 @@ module.exports = function(gulp, config, commandLineArguments) {
    */
   gulp.task(
     'run-mock',
-    gulp.series('clean', 'make', 'replace-sdk', function() {
+    gulp.series( 'make', 'replace-sdk', function() {
       gulp.src(config.outputFolder).pipe(
         webserver({
           open: true,

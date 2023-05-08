@@ -19,6 +19,7 @@
   <!-- build:js -->
   <script src="https://www.facebook.com/assets.php/en_US/fbinstant.latest.js"></script>
   <!-- endbuild -->
+  <script src="./js/game.js"></script>
 </head>
 
 <body>
@@ -32,76 +33,30 @@
   <!-- Start User Info -->
   <section id="info-section">
     <p>If you can see this, then FBInstant initialized properly and the game has started!</p>
+    
+    <button id="showMyAnimal">Click her to see your animal <span class="user-name"></span></button>
+    <button id="showMyPersonal">Click her to see your Person <span class="user-name"></span></button>
+    <button id="showMyYoutuber">Click her to see your Youtuber <span class="user-name"></span></button>
 
-    <button id="playnow">Click her to see your animal <span class="user-name"></span></button>
-
-    <img id="photo" class="profile_picture"/>
-
-    <table>
-      <tr>
-        <th>Player Name</th>
-        <td id="player-name"></td>
-      </tr>
-      <tr>
-        <th>Player ID</th>
-        <td id="player-id"></td>
-      </tr>
-      <tr>
-        <th>Context Type</th>
-        <td id="context-type"></td>
-      </tr>
-      <tr>
-        <th>Entrypoint Data</th>
-        <td id="entrypointdata"></td>
-      </tr>
-    </table>
+    
   </section>
   <!-- End User Info -->
 
   <!-- Start Animal Info -->
-  <div id="animal-info">
+  <div id="game-info">
     <h2><span class="user-name"></span>, you are!</h2>
-    <h1 id="animal-name"></h1>
+    <h1 id="game-name"></h1>
     <img id="animal-img" />
+    <canvas id="game-img" width="400" height="400"></canvas>
+    <button id="share">Share this image</button>
   </div>
   <!-- End Animal Info -->
 
   <script type="text/javascript">
 
-    const animals = [
-            {
-                text: 'කූඹියෙක්',
-                image: 'ant.jpg',
-            },
-            {
-                text: 'කුරුල්ලෙක්',
-                image: 'bird.jpg',
-            },
-            {
-                text: 'පූසෙක්',
-                image: 'cat.jpg',
-            },
-            {
-                text: 'බව්වෙක්',
-                image: 'dog.jpg',
-            },
-            {
-                text: 'අලියෙක්',
-                image: 'elephant.jpg',
-            },
-            {
-                text: 'නරියෙක්',
-                image: 'fox.jpg',
-            },
-            {
-                text: 'ගෙම්බෙක්',
-                image: 'frog.jpg',
-            }
-        ]
-
     window.onload = function() {
       $('#info-section').hide();
-
+      $('#game-info').hide();
       // When the window loads, start to initialize the SDK
       FBInstant.initializeAsync().then(function() {
 
@@ -124,34 +79,13 @@
       //hide loader
       $('#splash').hide();
 
-      // Information from the SDK can now be accessed
-      $('#photo').attr('src', FBInstant.player.getPhoto());
-      $('#player-name').html(FBInstant.player.getName());
-      $('#player-id').html(FBInstant.player.getID());
-      $('#context-type').html(FBInstant.context.getType());
-      try{
-        $('#entrypointdata').html(JSON.stringify(FBInstant.getEntryPointData()));
-      }catch(e){
-        console.log(e);
-      }
-
       $('.user-name').html(FBInstant.player.getName());
-      $('#playnow').click(showMyAnimal);
+      $('#showMyAnimal').click(showMyAnimal);
+      $('#showMyPersonal').click(showMyPersonal);
       $('#info-section').show();
     }
 
-    function showMyAnimal(){
-      $('#playnow').hide();
-      $('#info-section').hide();
-      $('#animal-info').show();
-
-      const an = animals[ Math.floor( animals.length * Math.random() ) ];
-      if(an){
-        $('#animal-name').html(an.text);
-        const url = './img/animals/' + an.image;
-        $('#animal-img').attr('src', url);
-      }
-    }
+   
   </script>
 
 </body>

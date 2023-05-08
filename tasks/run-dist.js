@@ -31,7 +31,7 @@ module.exports = function(gulp, config, commandLineArguments) {
    */
   gulp.task(
     'run-dist',
-    gulp.series('clean', 'make', 'replace-sdk', function() {
+    gulp.series( 'make', 'replace-sdk', function() {
       const openUrl =
         'https://www.facebook.com/embed/instantgames/' +
         config.FB_appId +
