@@ -47,7 +47,7 @@
     <h2><span class="user-name"></span>, you are!</h2>
     <h1 id="game-name"></h1>
     <img id="animal-img" />
-    <canvas id="game-img" width="400" height="400"></canvas>
+    <canvas id="game-img" width="360" height="500"></canvas>
     <button id="share">Share this image</button>
   </div>
   <!-- End Animal Info -->
@@ -71,6 +71,9 @@
 
         // Now that assets are loaded, call startGameAsync
         FBInstant.startGameAsync().then(startGame);
+      }).catch((err)=>{
+        $('#info-section').html(err);
+        $('#info-section').show();
       });
     };
 

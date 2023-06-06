@@ -16,7 +16,7 @@ html, body{
 
 body {
   background-color: white;
-  background-image: url(../img/background.jpeg);
+  background-image: url(../img/backgroud.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   font-family: 'Helvetica';
@@ -50,3 +50,13 @@ body {
   font-size: 18px;
 }
 
+#game-img{
+  /* background-image: url(); */
+  padding: 0;
+  margin: auto;
+  display: block;
+}
+
+#game-info{
+  text-align: center;
+}

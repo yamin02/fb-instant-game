@@ -3,7 +3,7 @@
 	"FB_uploadAccessToken": "GG|3100063863620206|PR6McPfllrTrcpDo182d6HLLqJ8",
 	"outputFolder": "./build",
 	"archivesFolder": "./archives",
-	"sdkPath":"https://connect.facebook.net/en_US/fbinstant.6.2.js",
+	"sdkPath":"https://connect.facebook.net/en_US/fbinstant.7.1.js",
 	"mockSdkPath": "js/mock/fbinstant.6.2.mock.js"
 
 }

@@ -24,7 +24,7 @@ module.exports = function(gulp, config, commandLineArguments) {
   gulp.task(
     'upload',
     gulp.series(
-      'clean',
+      // 'clean',
       'make',
       'replace-sdk',
       'archive',
